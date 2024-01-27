@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+<style xmlns="http://www.w3.org/1999/html">
+</style>
+{% block page_title %}
+dashboard
+{% endblock %}
+
+{% block content %}
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title m-b-0" style="color: green; font-weight: bolder;">Recent inquries</h1>
+                </div>
+                {% for i in response %}
+                <div class="comment-widgets scrollable">
+
+                    <div class="d-flex flex-row comment-row m-t-0">
+                        <div class="comment-text w-100">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h3 class="font-medium">{{i.name}}</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h5 class="font-medium">{{i.email}} | 0{{i.phone}}</h5>
+                                        </div>
+                                    </div>
+
+                                    <span class="m-b-15 d-block">{{i.message}}</span>
+                                </div>
+                                <div class="col-2">
+                                    <div class="comment-footer">
+                                        <a href="{% url 'question_detail' i.id %}"><button type="button"
+                                                class="btn btn-cyan btn-sm">View</button></a>
+                                        <a href="{% url 'question-delete' i.id %}"><button type="button"
+                                                class="btn btn-danger btn-sm">Delete</button></a>   
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <p>12/12/23 | 08:02 PM</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+    <!-- row -->
+
+</div>
+
+{% endblock %}

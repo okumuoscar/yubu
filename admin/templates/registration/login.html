@@ -1,0 +1,56 @@
+<div class="shadow-wrap">
+    <div class="form-wrap">   
+        <center>
+        <form action="" method="post">
+            <h1 style="margin-bottom: 40px; font-size: 80px; color: green;">YUBU</h1>
+            <h1 style="margin-bottom: 40px; font-size: 40px;">Login</h1>
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">submit</button>
+        </form>
+    </center>
+    </div>
+</div>
+<style>
+    .shaodw-wrap{
+        border-radius: 5px;
+        /* padding: 25px; */
+        background-color: #F0F2FB;
+    }
+    .form-wrap{
+        background-color: #fff;
+        padding-top: 50px;
+        
+    }
+    .form-wrap form *{
+        display: block;
+        width: 35%;
+        
+    }
+    .form-wrap form label{
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .form-wrap form input{
+        padding: 12px 20px;
+        border-radius: 5px;
+        border: 1px solid #DAE1F5;
+        background: #fff;
+        color: #545D7A;
+    }
+    #id_username{
+        margin-bottom: 20px;
+    }
+    .form-wrap button{
+        border-radius: 5px;
+        background: green;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        padding: 12px 68px;
+        font-weight: 700;
+        border: none;
+        margin-top: 30px;
+        line-height: 26px;
+    }
+</style>
